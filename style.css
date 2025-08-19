@@ -29,7 +29,7 @@ header {
 header h1 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #4f46e5;
+  color: #f97316;
 }
 
 nav a {
@@ -47,7 +47,7 @@ nav a:hover {
 /* Hero */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  background: linear-gradient(135deg, #f97316, #f43f5e);
   display: flex;
   align-items: center;
   justify-content: center;
