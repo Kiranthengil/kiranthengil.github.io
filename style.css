@@ -113,6 +113,18 @@ p, li {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+.card1 {
+  background: rgb(234, 207, 176);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(203, 76, 2, 0.95);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(203, 76, 2, 0.95);
+}
 
 /* Footer */
 footer {
