@@ -129,6 +129,8 @@ p, li {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 .card1 {
+  width: 200px;     /* square size */
+  height: 200px;
   background: rgb(234, 207, 176);
   border-radius: 1rem;
   padding: 1.5rem;
