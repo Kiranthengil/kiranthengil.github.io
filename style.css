@@ -125,8 +125,8 @@ p, li {
   box-shadow: 0 8px 20px rgba(203, 76, 2, 0.95);
 }
 .researcher-photo {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
