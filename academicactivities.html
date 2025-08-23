@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiran Thengil | Researcher</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/icon.png">
+</head>
+<body>
+    <header>
+    <h1><a href="index.html">Kiran Thengil</a></h1>
+
+    <style>
+    h1 a {
+        text-decoration: none;  /* removes underline */
+        color: inherit;         /* keeps the same text color as the heading */
+    }
+    </style>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="academicactivities.html" style="color:#4f46e5;">Activities</a>
+        <a href="initiatives.html">Initiatives</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    </header>
+    <h1>My YouTube Playlist</h1>
+
+    <!-- Player Area -->
+    <div id="player">
+    <iframe id="video-frame" width="560" height="315" 
+        src="https://www.youtube.com/embed/" 
+        frameborder="0" allowfullscreen>
+    </iframe>
+    </div>
+
+    <!-- Video List -->
+    <div id="video-list">
+    <div class="video-title" onclick="playVideo('dQw4w9WgXcQ')">
+        Rick Astley - Never Gonna Give You Up
+    </div>
+    <div class="video-title" onclick="playVideo('kxopViU98Xo')">
+        Funny Cat Video
+    </div>
+    <div class="video-title" onclick="playVideo('3JZ_D3ELwOQ')">
+        Coldplay - Viva La Vida
+    </div>
+    </div>
+
+    <script>
+    function playVideo(videoId) {
+        const iframe = document.getElementById("video-frame");
+        iframe.src = "https://www.youtube.com/embed/" + videoId;
+    }
+    </script>
+</body>
+</html>
