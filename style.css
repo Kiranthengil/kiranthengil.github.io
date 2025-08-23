@@ -35,8 +35,8 @@ header h1 {
 }
 
 header h1 a {
-  text-decoration: none;  /* removes underline */
-  color: inherit;         /* keeps the same text color as the heading */
+  text-decoration: none;
+  color: inherit;
 }
 
 nav a {
@@ -175,24 +175,24 @@ footer a:hover {
 /* ============================
    Talks Page Specific Styles
 ============================ */
-body.talks-page, 
-body.talks-page html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 body.talks-page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh;  /* full viewport height */
 }
 
+/* Make main grow to fill space between header and footer */
 body.talks-page main {
-  flex: 1;
+  flex: 1;  /* takes remaining space */
   padding: 1rem 5%;
-  max-width: 1200px;  /* larger for talks page */
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Footer always at bottom */
+body.talks-page footer {
+  margin-top: auto;  /* pushes footer to bottom */
   width: 100%;
   box-sizing: border-box;
 }
@@ -210,6 +210,7 @@ body.talks-page #subjects {
 body.talks-page #subjects::-webkit-scrollbar {
   height: 6px;
 }
+
 body.talks-page #subjects::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 3px;
@@ -276,6 +277,7 @@ body.talks-page .video-title {
 body.talks-page .video-title::-webkit-scrollbar {
   height: 6px;
 }
+
 body.talks-page .video-title::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 3px;
