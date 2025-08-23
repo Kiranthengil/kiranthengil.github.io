@@ -161,19 +161,33 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* Subject buttons row */
+/* Subject buttons row with horizontal scroll */
 #subjects {
+  display: flex;
+  gap: 8px;
   margin-bottom: 15px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 8px;
+}
+
+/* Hide scrollbar for cleaner look (works in most browsers) */
+#subjects::-webkit-scrollbar {
+  height: 6px;
+}
+#subjects::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
 }
 
 .subject-btn {
   background-color: #007BFF;
   color: white;
   padding: 10px 15px;
-  margin-right: 8px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  flex: 0 0 auto; /* prevent buttons from shrinking */
 }
 
 .subject-btn:hover {
@@ -215,3 +229,4 @@ h1 {
 .video-title:hover {
   color: darkred;
 }
+
