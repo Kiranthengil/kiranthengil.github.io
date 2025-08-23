@@ -152,11 +152,6 @@ footer a {
 footer a:hover {
   color: white;
 }
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
-
 h1 {
   margin-bottom: 10px;
 }
