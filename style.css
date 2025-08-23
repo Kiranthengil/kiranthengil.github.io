@@ -157,21 +157,35 @@ body {
   margin: 20px;
 }
 
-#video-list {
-  margin-top: 20px;
+#player {
+  margin-bottom: 20px;
+}
+
+#subjects {
+  margin-bottom: 20px;
+}
+
+.subject-btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.subject-btn:hover {
+  background-color: #0056b3;
 }
 
 .video-title {
   cursor: pointer;
-  margin: 8px 0;
+  margin: 6px 0;
   color: blue;
   text-decoration: underline;
 }
 
 .video-title:hover {
   color: darkred;
-}
-
-#player {
-  margin-top: 20px;
 }
