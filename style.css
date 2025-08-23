@@ -81,12 +81,14 @@ nav a:hover {
   background: #f3f4f6;
 }
 
-/* Page content */
+/* Main container wider & fluid */
 main {
-  max-width: 900px;
+  max-width: 1200px; /* allow more width on big screens */
   margin: 8rem auto 4rem auto;
   padding: 0 1.5rem;
+  width: 100%; /* ensure full width usage */
 }
+
 
 h3 {
   font-size: 2rem;
@@ -131,7 +133,7 @@ p, li {
     object-fit: cover;
     margin-bottom: 10px;
 }
-/* Footer */
+/* Footer full width */
 footer {
   background: #111827;
   color: #9ca3af;
@@ -140,6 +142,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 footer a {
@@ -197,21 +201,59 @@ h1 {
 #main-container {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap; /* stack on mobile */
+}
+/* Responsive player */
+#player {
+  flex: 1 1 560px;  /* grow/shrink as needed */
+  max-width: 100%;
 }
 
-/* Player area */
+/* Aspect ratio trick for responsive iframe */
 #player iframe {
-  width: 560px;
-  height: 315px;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* modern CSS way */
+  height: auto;
+  border: none;
 }
 
 /* Video list on right side */
 #video-list {
-  width: 300px;
-  height: 315px; /* same height as player */
-  overflow-y: auto;
+  flex: 0 0 300px;
+  height: auto;
+  max-height: 100%; 
   border: 1px solid #ccc;
   padding: 10px;
+  overflow-y: auto;
+}
+
+/* Video list on right side */
+#video-list {
+  flex: 0 0 300px;
+  height: auto;
+  max-height: 100%; 
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Make video list match player height on large screens */
+@media (min-width: 900px) {
+  #video-list {
+    height: auto;
+    max-height: 315px; /* sync with aspect ratio on typical screens */
+  }
+}
+
+/* On mobile: stack player + list */
+@media (max-width: 768px) {
+  #main-container {
+    flex-direction: column;
+  }
+  #video-list {
+    width: 100%;
+    max-height: none;
+  }
 }
 
 /* Video titles with horizontal scroll */
