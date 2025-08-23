@@ -157,12 +157,13 @@ body {
   margin: 20px;
 }
 
-#player {
-  margin-bottom: 20px;
+h1 {
+  margin-bottom: 10px;
 }
 
+/* Subject buttons row */
 #subjects {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .subject-btn {
@@ -177,6 +178,31 @@ body {
 
 .subject-btn:hover {
   background-color: #0056b3;
+}
+
+.subject-btn.active {
+  background-color: #28a745; /* highlight active project */
+}
+
+/* Layout: player left, list right */
+#main-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* Player area */
+#player iframe {
+  width: 560px;
+  height: 315px;
+}
+
+/* Video list on right side */
+#video-list {
+  width: 300px;
+  height: 315px; /* same height as player */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
 .video-title {
