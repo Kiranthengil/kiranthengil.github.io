@@ -38,24 +38,12 @@
     </iframe>
     </div>
     </main>
-    <!-- Video List -->
-    <div id="video-list">
-    <div class="video-title" onclick="playVideo('dQw4w9WgXcQ')">
-        Rick Astley - Never Gonna Give You Up
-    </div>
-    <div class="video-title" onclick="playVideo('kxopViU98Xo')">
-        Funny Cat Video
-    </div>
-    <div class="video-title" onclick="playVideo('3JZ_D3ELwOQ')">
-        Coldplay - Viva La Vida
-    </div>
-    </div>
+    <!-- Subject Buttons -->
+    <div id="subjects"></div>
 
-    <script>
-    function playVideo(videoId) {
-        const iframe = document.getElementById("video-frame");
-        iframe.src = "https://www.youtube.com/embed/" + videoId;
-    }
-    </script>
+    <!-- Video List Area -->
+    <div id="video-list"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
