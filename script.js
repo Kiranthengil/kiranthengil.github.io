@@ -1,17 +1,11 @@
 // Example data structure: projects and their videos
 const videosBySubject = {
   "Project 1": [
-    { title: "Intro to Project 1", id: "QvXbR6qPVpo" },
-    { title: "Deep Dive - Project 1", id: "9C_HReR_McQ" }
+    { title: "What is Single Layer QAOA?", id: "brvUuIOOQdg" },
+    { title: "What is Single Layer QAOA?", id: "brvUuIOOQdg" }
   ],
-  "Project 2": [
-    { title: "Overview of Project 2", id: "e-P5IFTqB98" },
-    { title: "Details - Project 2", id: "JhHMJCUmq28" }
-  ],
-  "Project 3": [
-    { title: "Introduction - Project 3", id: "t3217H8JppI" },
-    { title: "Case Study - Project 3", id: "3JZ_D3ELwOQ" }
-  ]
+  "Project 2": [],
+  "Project 3": []
 };
 
 const subjectsDiv = document.getElementById("subjects");
