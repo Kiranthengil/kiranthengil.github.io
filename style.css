@@ -1,4 +1,6 @@
-/* Reset & base */
+/* ============================
+   Reset & Base Styles
+============================ */
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +34,11 @@ header h1 {
   color: #f97316;
 }
 
+header h1 a {
+  text-decoration: none;  /* removes underline */
+  color: inherit;         /* keeps the same text color as the heading */
+}
+
 nav a {
   margin-left: 1.5rem;
   text-decoration: none;
@@ -44,7 +51,7 @@ nav a:hover {
   color: #4f46e5;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
   height: 100vh;
   background: linear-gradient(135deg, #f97316, #f43f5e);
@@ -81,19 +88,25 @@ nav a:hover {
   background: #f3f4f6;
 }
 
-/* Main container wider & fluid */
+/* Page Content */
 main {
-  max-width: 1200px; /* allow more width on big screens */
+  max-width: 900px;
   margin: 8rem auto 4rem auto;
   padding: 0 1.5rem;
-  width: 100%; /* ensure full width usage */
 }
 
+h1, h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #111827;
+}
 
 h3 {
   font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
   color: #111827;
 }
 
@@ -102,6 +115,7 @@ p, li {
   color: #444;
   margin-bottom: 1rem;
 }
+
 .card {
   background: white;
   border-radius: 1rem;
@@ -114,6 +128,7 @@ p, li {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+
 .card1 {
   background: rgb(234, 207, 176);
   border-radius: 1rem;
@@ -126,14 +141,16 @@ p, li {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(203, 76, 2, 0.95);
 }
+
 .researcher-photo {
-    width: 145px;
-    height: 145px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
-/* Footer full width */
+
+/* Footer */
 footer {
   background: #111827;
   color: #9ca3af;
@@ -142,8 +159,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 footer a {
@@ -156,12 +171,34 @@ footer a {
 footer a:hover {
   color: white;
 }
-h1 {
-  margin-bottom: 10px;
+
+/* ============================
+   Talks Page Specific Styles
+============================ */
+body.talks-page, 
+body.talks-page html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body.talks-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.talks-page main {
+  flex: 1;
+  padding: 1rem 5%;
+  max-width: 1200px;  /* larger for talks page */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Subject buttons row with horizontal scroll */
-#subjects {
+body.talks-page #subjects {
   display: flex;
   gap: 8px;
   margin-bottom: 15px;
@@ -170,11 +207,10 @@ h1 {
   padding-bottom: 8px;
 }
 
-/* Hide scrollbar for cleaner look (works in most browsers) */
-#subjects::-webkit-scrollbar {
+body.talks-page #subjects::-webkit-scrollbar {
   height: 6px;
 }
-#subjects::-webkit-scrollbar-thumb {
+body.talks-page #subjects::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 3px;
 }
@@ -197,87 +233,65 @@ h1 {
   background-color: #28a745; /* highlight active project */
 }
 
-/* Layout: player left, list right */
-#main-container {
+/* Main container layout */
+body.talks-page #main-container {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; /* stack on mobile */
+  flex-wrap: wrap; /* stack on small screens */
 }
+
 /* Responsive player */
-#player {
-  flex: 1 1 560px;  /* grow/shrink as needed */
+body.talks-page #player {
+  flex: 1 1 560px;
   max-width: 100%;
 }
 
-/* Aspect ratio trick for responsive iframe */
-#player iframe {
+body.talks-page #player iframe {
   width: 100%;
-  aspect-ratio: 16 / 9; /* modern CSS way */
-  height: auto;
+  aspect-ratio: 16/9;
   border: none;
 }
 
 /* Video list on right side */
-#video-list {
+body.talks-page #video-list {
   flex: 0 0 300px;
-  height: auto;
-  max-height: 100%; 
+  max-height: 100%;
   border: 1px solid #ccc;
   padding: 10px;
   overflow-y: auto;
 }
 
-/* Video list on right side */
-#video-list {
-  flex: 0 0 300px;
-  height: auto;
-  max-height: 100%; 
-  border: 1px solid #ccc;
-  padding: 10px;
-  overflow-y: auto;
-}
-
-/* Make video list match player height on large screens */
-@media (min-width: 900px) {
-  #video-list {
-    height: auto;
-    max-height: 315px; /* sync with aspect ratio on typical screens */
-  }
-}
-
-/* On mobile: stack player + list */
-@media (max-width: 768px) {
-  #main-container {
-    flex-direction: column;
-  }
-  #video-list {
-    width: 100%;
-    max-height: none;
-  }
-}
-
-/* Video titles with horizontal scroll */
-.video-title {
+/* Video titles with horizontal scroll if too long */
+body.talks-page .video-title {
   cursor: pointer;
   margin: 6px 0;
   color: blue;
   text-decoration: underline;
-  white-space: nowrap;       /* keep in one line */
-  overflow-x: auto;          /* enable horizontal scroll if long */
-  display: block;            /* ensures it acts like a block */
-  max-width: 100%;           /* don’t overflow container */
+  white-space: nowrap;
+  overflow-x: auto;
+  display: block;
+  max-width: 100%;
 }
 
-/* Optional: add custom scrollbar */
-.video-title::-webkit-scrollbar {
+body.talks-page .video-title::-webkit-scrollbar {
   height: 6px;
 }
-.video-title::-webkit-scrollbar-thumb {
+body.talks-page .video-title::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 3px;
 }
 
-.video-title:hover {
+body.talks-page .video-title:hover {
   color: darkred;
 }
 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  body.talks-page #main-container {
+    flex-direction: column;
+  }
+  body.talks-page #video-list {
+    width: 100%;
+    max-height: none;
+  }
+}
