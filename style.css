@@ -219,11 +219,25 @@ h1 {
   padding: 10px;
 }
 
+/* Video titles with horizontal scroll */
 .video-title {
   cursor: pointer;
   margin: 6px 0;
   color: blue;
   text-decoration: underline;
+  white-space: nowrap;       /* keep in one line */
+  overflow-x: auto;          /* enable horizontal scroll if long */
+  display: block;            /* ensures it acts like a block */
+  max-width: 100%;           /* don’t overflow container */
+}
+
+/* Optional: add custom scrollbar */
+.video-title::-webkit-scrollbar {
+  height: 6px;
+}
+.video-title::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
 }
 
 .video-title:hover {
