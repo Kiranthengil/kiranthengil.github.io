@@ -36,17 +36,22 @@ function loadVideos(subject) {
     const div = document.createElement("div");
     div.className = "video-title";
     div.innerText = video.title;
-    div.onclick = () => playVideo(video.id);
+    div.onclick = () => playVideo(video.id, true);
     videoListDiv.appendChild(div);
 
     // Auto-play the first video
     if (index === 0) {
-      playVideo(video.id);
+      playVideo(video.id, true);
     }
   });
 }
 
-// Play a selected video
-function playVideo(videoId) {
-  videoFrame.src = "https://www.youtube.com/embed/" + videoId;
+// Play a selected video (with autoplay option)
+function playVideo(videoId, autoplay = false) {
+  let url = "https://www.youtube.com/embed/" + videoId;
+  if (autoplay) {
+    url += "?autoplay=1&mute=1"; 
+    // note: 'mute=1' is needed because most browsers block auto-playing sound
+  }
+  videoFrame.src = url;
 }
