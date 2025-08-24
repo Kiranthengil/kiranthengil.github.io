@@ -73,6 +73,7 @@ nav a:hover {
   margin-bottom: 1rem;  /* space below */
   margin-bottom: 2rem;  /* space below */
 }
+
 .hero h2 {
   font-size: 2rem;
   font-weight: 600;
@@ -100,7 +101,7 @@ nav a:hover {
 /* Page Content */
 main {
   max-width: 900px;
-  margin: 8rem auto 4rem auto;
+  margin: 4rem auto 4rem auto;
   padding: 0 1.5rem;
 }
 
