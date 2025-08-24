@@ -149,14 +149,6 @@ p, li {
   box-shadow: 0 8px 20px rgba(203, 76, 2, 0.95);
 }
 
-.researcher-photo {
-  width: 145px;
-  height: 145px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
 /* Footer */
 footer {
   background: #111827;
