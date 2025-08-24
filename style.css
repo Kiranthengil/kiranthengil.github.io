@@ -65,7 +65,10 @@ nav a:hover {
   text-align: left;
   padding: 2rem;
   gap: 2rem;
+  padding-top: 100px; /* leave space for fixed header */
+  height: calc(100vh - 100px);
 }
+
 
 .hero img.researcher-photo {
   width: 200px;
