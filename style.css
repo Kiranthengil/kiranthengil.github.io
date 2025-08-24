@@ -51,9 +51,10 @@ nav a:hover {
   color: #4f46e5;
 }
 
-/* Hero Section */
+/* Adjust hero so it starts below header */
 .hero {
-  height: 100vh;
+  margin-top: 80px;   /* adjust to match your header height */
+  height: 70vh;       /* reduced from full screen */
   background: linear-gradient(135deg, #f97316, #f43f5e);
   display: flex;
   align-items: center;
@@ -63,6 +64,7 @@ nav a:hover {
   text-align: center;
   padding: 2rem;
 }
+
 /* Restrict and center the hero image */
 .hero img.researcher-photo {
   max-width: 200px;     /* keeps it from getting too big */
@@ -105,7 +107,7 @@ main {
 h1, h3 {
   font-weight: 700;
   margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 h1 {
@@ -143,7 +145,7 @@ p, li {
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(203, 76, 2, 0.95);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .card1:hover {
