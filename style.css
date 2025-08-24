@@ -35,8 +35,8 @@ header h1 {
 }
 
 header h1 a {
-  text-decoration: none;  /* removes underline */
-  color: inherit;         /* keeps the same text color as the heading */
+  text-decoration: none;
+  color: inherit;
 }
 
 nav a {
@@ -51,22 +51,24 @@ nav a:hover {
   color: #4f46e5;
 }
 
-/* Hero Section - Image Left, Text Right */
+/* ============================
+   Hero Section - Image Left, Text Right
+============================ */
 .hero {
   height: 100vh;
   background: linear-gradient(135deg, #f97316, #f43f5e);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row; /* image left, text right */
+  flex-direction: row;
   color: white;
-  text-align: left;    /* text aligns left now */
+  text-align: left;
   padding: 2rem;
-  gap: 2rem;           /* space between image and text */
+  gap: 2rem;
 }
 
 .hero img.researcher-photo {
-  width: 200px;        /* adjust as needed */
+  width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
@@ -75,6 +77,7 @@ nav a:hover {
 .hero .hero-text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .hero h2 {
@@ -102,7 +105,7 @@ nav a:hover {
   background: #f3f4f6;
 }
 
-/* Responsive: stack vertically on mobile */
+/* Responsive: stack hero vertically on mobile */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -110,7 +113,9 @@ nav a:hover {
   }
 }
 
-/* Page Content */
+/* ============================
+   Page Content
+============================ */
 main {
   max-width: 900px;
   margin: 4rem auto 4rem auto;
@@ -188,17 +193,15 @@ footer a:hover {
   color: white;
 }
 
-
 /* ============================
-   Index page video Styles
+   Index Page Video Styles
 ============================ */
-
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 800px;   /* optional: cap size on big screens */
+  max-width: 800px;
   margin: 1rem auto;
-  aspect-ratio: 16 / 9; /* keeps correct proportions */
+  aspect-ratio: 16 / 9;
 }
 
 .video-container iframe {
@@ -210,17 +213,9 @@ footer a:hover {
   border: none;
 }
 
-
 /* ============================
-   Activity page video style
+   Activity Page Video Styles
 ============================ */
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   display: flex;
   flex-direction: column;
@@ -230,12 +225,11 @@ body {
 main {
   flex: 1;
   padding: 1rem 5%;
-  max-width: 1200px;  /* larger for content */
+  max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Subject buttons row with horizontal scroll */
 #subjects {
   display: flex;
   gap: 8px;
@@ -260,7 +254,7 @@ main {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  flex: 0 0 auto; /* prevent buttons from shrinking */
+  flex: 0 0 auto;
 }
 
 .subject-btn:hover {
@@ -268,17 +262,15 @@ main {
 }
 
 .subject-btn.active {
-  background-color: #28a745; /* highlight active project */
+  background-color: #28a745;
 }
 
-/* Main container layout */
 #main-container {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; /* stack on small screens */
+  flex-wrap: wrap;
 }
 
-/* Responsive player */
 #player {
   flex: 1 1 560px;
   max-width: 100%;
@@ -290,7 +282,6 @@ main {
   border: none;
 }
 
-/* Video list on right side */
 #video-list {
   flex: 0 0 300px;
   max-height: 100%;
@@ -299,7 +290,6 @@ main {
   overflow-y: auto;
 }
 
-/* Default video title */
 .video-title {
   cursor: pointer;
   margin: 6px 0;
@@ -308,13 +298,12 @@ main {
   overflow-x: auto;
   display: block;
   max-width: 100%;
-  font-weight: bold;   /* always bold */
-  text-decoration: none; /* no underline */
+  font-weight: bold;
+  text-decoration: none;
 }
 
-/* Style for the currently playing video */
 .video-title.playing {
-  color: green; /* change color when playing */
+  color: green;
 }
 
 .video-title::-webkit-scrollbar {
@@ -329,8 +318,6 @@ main {
   color: darkred;
 }
 
-
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   #main-container {
     flex-direction: column;
@@ -340,6 +327,3 @@ main {
     max-height: none;
   }
 }
-
-
-
