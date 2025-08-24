@@ -55,7 +55,7 @@ nav a:hover {
    Hero Section - Image Left, Text Right
 ============================ */
 .hero {
-  height: 100vh;
+  height: auto;
   background: linear-gradient(135deg, #f97316, #f43f5e);
   display: flex;
   align-items: center;
@@ -68,7 +68,6 @@ nav a:hover {
   padding-top: 100px; /* leave space for fixed header */
   height: calc(100vh - 100px);
 }
-
 
 .hero img.researcher-photo {
   width: 200px;
