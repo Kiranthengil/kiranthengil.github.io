@@ -105,6 +105,7 @@ main {
 h1, h3 {
   font-weight: 700;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 h1 {
@@ -142,6 +143,7 @@ p, li {
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(203, 76, 2, 0.95);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
 }
 
 .card1:hover {
