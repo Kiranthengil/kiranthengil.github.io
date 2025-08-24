@@ -296,6 +296,11 @@ main {
   text-decoration: none; /* no underline */
 }
 
+/* Style for the currently playing video */
+.video-title.playing {
+  color: green; /* change color when playing */
+}
+
 .video-title::-webkit-scrollbar {
   height: 6px;
 }
@@ -307,6 +312,7 @@ main {
 .video-title:hover {
   color: darkred;
 }
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
