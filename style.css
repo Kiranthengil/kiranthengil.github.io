@@ -283,16 +283,17 @@ main {
   overflow-y: auto;
 }
 
-/* Video titles with horizontal scroll if too long */
+/* Default video title */
 .video-title {
   cursor: pointer;
   margin: 6px 0;
-  color: blue;
-  text-decoration: underline;
+  color: #007BFF;
   white-space: nowrap;
   overflow-x: auto;
   display: block;
   max-width: 100%;
+  font-weight: bold;   /* always bold */
+  text-decoration: none; /* no underline */
 }
 
 .video-title::-webkit-scrollbar {
