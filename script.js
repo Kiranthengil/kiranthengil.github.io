@@ -11,7 +11,7 @@ const videosBySubject = {
 // Example data structure: projects and their notes (PDFs)
 const notesBySubject = {
   "Project 1": [
-    { title: "My first paper", link: "https://drive.google.com/file/d/1sbsGxnnGkvqxd8JXU6IpTrb8ECum4rmW/preview" },
+    { title: "QAOA Notes", link: "https://drive.google.com/file/d/1aJGgx3GKt1rtx-tMthiOSGSDk7vYQLZk/preview" },
     { title: "Additional Material", link: "https://drive.google.com/file/d/your-second-file-id/preview" }
   ],
   "Project 2": [
@@ -20,41 +20,40 @@ const notesBySubject = {
   "Project 3": []
 };
 
-const subjectsDiv = document.getElementById("subjects");
+const talksSubjectsDiv = document.getElementById("subjects-talks");
 const videoListDiv = document.getElementById("video-list");
 const videoFrame = document.getElementById("video-frame");
+
+const notesSubjectsDiv = document.getElementById("subjects-notes");
 const notesListDiv = document.getElementById("notes-list");
 const pdfFrame = document.getElementById("pdf-frame");
 
-let activeButton = null;
+let activeTalkButton = null;
+let activeNotesButton = null;
 let currentPlaying = null;
 let currentNote = null;
 
-// Create subject buttons
-Object.keys(videosBySubject).forEach(subject => {
+// ====== Talks Section ======
+Object.keys(videosBySubject).forEach((subject, idx) => {
   const btn = document.createElement("button");
   btn.innerText = subject;
   btn.className = "subject-btn";
   btn.onclick = () => {
-    if (activeButton) activeButton.classList.remove("active");
+    if (activeTalkButton) activeTalkButton.classList.remove("active");
     btn.classList.add("active");
-    activeButton = btn;
+    activeTalkButton = btn;
     loadVideos(subject);
-    loadNotes(subject);
   };
-  subjectsDiv.appendChild(btn);
+  talksSubjectsDiv.appendChild(btn);
 
-  // 👉 Automatically load Project 1 by default
-  if (subject === "Project 1") {
+  // Load first project on page load
+  if (idx === 0) {
     btn.classList.add("active");
-    activeButton = btn;
+    activeTalkButton = btn;
     loadVideos(subject);
-    loadNotes(subject);
   }
 });
 
-
-// Load videos for selected subject
 function loadVideos(subject) {
   videoListDiv.innerHTML = "";
   const videos = videosBySubject[subject];
@@ -73,7 +72,43 @@ function loadVideos(subject) {
   });
 }
 
-// Load notes for selected subject
+function playVideo(videoId, titleElement, autoplay = false) {
+  let url = "https://www.youtube.com/embed/" + videoId;
+  if (autoplay) {
+    url += "?autoplay=1&mute=1";
+  }
+  videoFrame.src = url;
+
+  if (currentPlaying) {
+    currentPlaying.classList.remove("playing");
+  }
+  if (titleElement) {
+    titleElement.classList.add("playing");
+    currentPlaying = titleElement;
+  }
+}
+
+// ====== Notes Section ======
+Object.keys(notesBySubject).forEach((subject, idx) => {
+  const btn = document.createElement("button");
+  btn.innerText = subject;
+  btn.className = "subject-btn";
+  btn.onclick = () => {
+    if (activeNotesButton) activeNotesButton.classList.remove("active");
+    btn.classList.add("active");
+    activeNotesButton = btn;
+    loadNotes(subject);
+  };
+  notesSubjectsDiv.appendChild(btn);
+
+  // Load first project notes on page load
+  if (idx === 0) {
+    btn.classList.add("active");
+    activeNotesButton = btn;
+    loadNotes(subject);
+  }
+});
+
 function loadNotes(subject) {
   notesListDiv.innerHTML = "";
   const notes = notesBySubject[subject];
@@ -92,24 +127,6 @@ function loadNotes(subject) {
   });
 }
 
-// Play a selected video
-function playVideo(videoId, titleElement, autoplay = false) {
-  let url = "https://www.youtube.com/embed/" + videoId;
-  if (autoplay) {
-    url += "?autoplay=1&mute=1";
-  }
-  videoFrame.src = url;
-
-  if (currentPlaying) {
-    currentPlaying.classList.remove("playing");
-  }
-  if (titleElement) {
-    titleElement.classList.add("playing");
-    currentPlaying = titleElement;
-  }
-}
-
-// Open a selected PDF
 function openPDF(link, noteElement) {
   pdfFrame.src = link;
 
