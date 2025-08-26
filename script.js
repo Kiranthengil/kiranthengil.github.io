@@ -43,7 +43,16 @@ Object.keys(videosBySubject).forEach(subject => {
     loadNotes(subject);
   };
   subjectsDiv.appendChild(btn);
+
+  // 👉 Automatically load Project 1 by default
+  if (subject === "Project 1") {
+    btn.classList.add("active");
+    activeButton = btn;
+    loadVideos(subject);
+    loadNotes(subject);
+  }
 });
+
 
 // Load videos for selected subject
 function loadVideos(subject) {
