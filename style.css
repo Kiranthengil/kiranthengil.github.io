@@ -67,7 +67,7 @@ nav a:hover {
   color: white;
   text-align: left;
   padding: 2rem;
-  gap: 2rem;
+  gap: 1rem;
   padding-top: 100px; /* leave space for fixed header */
   height: calc(90vh - 100px);
 }
