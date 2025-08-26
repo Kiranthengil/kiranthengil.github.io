@@ -67,10 +67,11 @@ nav a:hover {
   color: white;
   text-align: left;
   padding: 2rem;
-  gap: 1rem;
+  gap: 2rem;
   padding-top: 100px; /* leave space for fixed header */
   min-height: calc(90vh - 100px);
   height: auto;
+  padding-bottom: 1rem;
 }
 
 .hero img.researcher-photo {
