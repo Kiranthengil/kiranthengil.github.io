@@ -8,30 +8,32 @@
   <link rel="icon" type="image/png" href="images/icon.png">
 </head>
 <body>
-    <header>
-    <h1><a href="index.html">Kiran Thengil</a></h1>
-
-    <style>
+<header>
+  <h1><a href="index.html">Kiran Thengil</a></h1>
+  <style>
     h1 a {
-        text-decoration: none;  /* removes underline */
-        color: inherit;         /* keeps the same text color as the heading */
+      text-decoration: none;
+      color: inherit;
     }
-    </style>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="publications.html">Publications</a>
-        <a href="academicactivities.html" style="color:#4f46e5;">Activities</a>
-        <a href="initiatives.html">Initiatives</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    </header>
-    <main>
-    <h1>My Talks</h1>
-    <!-- Subject Buttons -->
-    <div id="subjects"></div>
-    <div id="main-container">
+  </style>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="academicactivities.html" style="color:#4f46e5;">Activities</a>
+    <a href="initiatives.html">Initiatives</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>My Talks</h1>
+
+  <!-- Subject Buttons -->
+  <div id="subjects"></div>
+
+  <div id="main-container">
     <!-- Player Area -->
     <div id="player">
       <iframe id="video-frame" 
@@ -41,18 +43,28 @@
     </div>
     <!-- Video List Area -->
     <div id="video-list"></div>
-    </div>
-    </main>
-    <iframe src="https://drive.google.com/file/d/1aJGgx3GKt1rtx-tMthiOSGSDk7vYQLZk/preview" width="640" height="480"></iframe>
-    <footer>
-    <p>&copy; <span id="year"></span> Kiran Thengil</p>
-    <div>
-      <a href="https://scholar.google.com/citations?user=prvH3bUAAAAJ&hl=en&authuser=1">Google Scholar</a>
-      <a href="https://www.researchgate.net/profile/Kiran-Thengil">ResearchGate</a>
-      <a href="https://orcid.org/0000-0002-3169-8750">ORCID</a>
-    </div>
-    </footer>
-    <script src="script.js"></script>
+  </div>
 
+  <!-- Notes Container -->
+  <div id="notes-container">
+    <div id="notes-viewer">
+      <iframe id="pdf-frame"
+        src=""
+        frameborder="0"></iframe>
+    </div>
+    <div id="notes-list"></div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Kiran Thengil</p>
+  <div>
+    <a href="https://scholar.google.com/citations?user=prvH3bUAAAAJ&hl=en&authuser=1">Google Scholar</a>
+    <a href="https://www.researchgate.net/profile/Kiran-Thengil">ResearchGate</a>
+    <a href="https://orcid.org/0000-0002-3169-8750">ORCID</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

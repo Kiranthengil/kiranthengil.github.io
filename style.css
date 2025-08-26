@@ -329,3 +329,57 @@ main {
     max-height: none;
   }
 }
+/* Notes Section */
+#notes-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+#notes-viewer {
+  flex: 1 1 560px;
+  max-width: 100%;
+}
+
+#notes-viewer iframe {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#notes-list {
+  flex: 0 0 300px;
+  max-height: 500px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.note-title {
+  cursor: pointer;
+  margin: 6px 0;
+  color: #007BFF;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+.note-title.playing {
+  color: green;
+}
+
+.note-title:hover {
+  color: darkred;
+}
+
+@media (max-width: 768px) {
+  #notes-container {
+    flex-direction: column;
+  }
+  #notes-list {
+    width: 100%;
+    max-height: none;
+  }
+}
