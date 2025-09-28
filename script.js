@@ -162,7 +162,7 @@ Object.keys(latestpubBySubject).forEach((subject, idx) => {
     if (activeLatestButton) activeLatestButton.classList.remove("active");
     btn.classList.add("active");
     activeLatestButton = btn;
-    loadNotes(subject);
+    loadLatest(subject);
   };
   latestpubSubjectsDiv.appendChild(btn);
 
@@ -170,11 +170,11 @@ Object.keys(latestpubBySubject).forEach((subject, idx) => {
   if (idx === 0) {
     btn.classList.add("active");
     activeLatestButton = btn;
-    loadNotes(subject);
+    loadLatest(subject);
   }
 });
 
-function loadNotes(subject) {
+function loadLatest(subject) {
   latestpubListDiv.innerHTML = "";
   const latestpubs = latestpubBySubject[subject];
 
