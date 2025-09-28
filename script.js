@@ -20,6 +20,15 @@ const notesBySubject = {
   "Project 3": []
 };
 
+// Example data structure: projects and their notes (PDFs)
+const latestpubBySubject = {
+  "Latest Publications": [
+    { title: "Digital controllability of transverse field Ising chains (ArXiv version)", link: "https://arxiv.org/pdf/2509.17754" },
+    { title: "From Exponential to Quadratic: Optimal Control for a Frustrated Ising Ring Model (QST 2025)", link: "https://arxiv.org/pdf/2502.17015" }
+  ]
+};
+
+
 const talksSubjectsDiv = document.getElementById("subjects-talks");
 const videoListDiv = document.getElementById("video-list");
 const videoFrame = document.getElementById("video-frame");
@@ -28,10 +37,16 @@ const notesSubjectsDiv = document.getElementById("subjects-notes");
 const notesListDiv = document.getElementById("notes-list");
 const pdfFrame = document.getElementById("pdf-frame");
 
+const latestpubSubjectsDiv = document.getElementById("latest-subjects");
+const latestpubListDiv = document.getElementById("latest-list");
+const latestpubpdfFrame = document.getElementById("latest-pdf-frame");
+
 let activeTalkButton = null;
 let activeNotesButton = null;
+let activeLatestButton = null;
 let currentPlaying = null;
 let currentNote = null;
+let currentLatest = null;
 
 // ====== Talks Section ======
 Object.keys(videosBySubject).forEach((subject, idx) => {
@@ -138,73 +153,54 @@ function openPDF(link, noteElement) {
     currentNote = noteElement;
   }
 }
-// ============================
-// Latest Publication Section
-// ============================
-const latestBySubject = {
-  "Digital controllability": [
-    { title: "Digital controllability of transverse field Ising chains (ArXiv version)", link: "https://arxiv.org/pdf/2509.17754" }
-  ],
-  "dQA of frustrated Ising ring": [
-    { title: "From Exponential to Quadratic: Optimal Control for a Frustrated Ising Ring Model (QST 2025)", link: "https://arxiv.org/pdf/2502.17015" }
-  ]
-};
+// ====== Latest Publications Section ======
+Object.keys(latestpubBySubject).forEach((subject, idx) => {
+  const btn = document.createElement("button");
+  btn.innerText = subject;
+  btn.className = "subject-btn";
+  btn.onclick = () => {
+    if (activeLatestButton) activeLatestButton.classList.remove("active");
+    btn.classList.add("active");
+    activeLatestButton = btn;
+    loadNotes(subject);
+  };
+  latestpubSubjectsDiv.appendChild(btn);
 
-const latestSubjectsDiv = document.getElementById("subjects-latest");
-const latestListDiv = document.getElementById("latest-list");
-const latestFrame = document.getElementById("latest-pdf-frame");
+  // Load first latest pub on page load
+  if (idx === 0) {
+    btn.classList.add("active");
+    activeLatestButton = btn;
+    loadNotes(subject);
+  }
+});
 
-let activeLatestButton = null;
-let currentLatest = null;
+function loadNotes(subject) {
+  latestpubListDiv.innerHTML = "";
+  const latestpubs = latestpubBySubject[subject];
 
-if (latestSubjectsDiv) {
-  Object.keys(latestBySubject).forEach((subject, idx) => {
-    const btn = document.createElement("button");
-    btn.innerText = subject;
-    btn.className = "subject-btn";
-    btn.onclick = () => {
-      if (activeLatestButton) activeLatestButton.classList.remove("active");
-      btn.classList.add("active");
-      activeLatestButton = btn;
-      loadLatest(subject);
-    };
-    latestSubjectsDiv.appendChild(btn);
-
-    // Load first subject by default
-    if (idx === 0) {
-      btn.classList.add("active");
-      activeLatestButton = btn;
-      loadLatest(subject);
-    }
-  });
-}
-
-function loadLatest(subject) {
-  latestListDiv.innerHTML = "";
-  const files = latestBySubject[subject];
-
-  files.forEach((file, index) => {
+  latestpubs.forEach((latestpub, index) => {
     const div = document.createElement("div");
-    div.className = "note-title";
-    div.innerText = file.title;
-    div.dataset.link = file.link;
-    div.onclick = () => openLatest(file.link, div);
-    latestListDiv.appendChild(div);
+    div.className = "latestpub-title";
+    div.innerText = latestpub.title;
+    div.dataset.link = latestpub.link;
+    div.onclick = () => openPDF(latestpub.link, div);
+    latestpubListDiv.appendChild(div);
 
     if (index === 0) {
-      openLatest(file.link, div);
+      openPDF(latestpub.link, div);
     }
   });
 }
 
-function openLatest(link, latestElement) {
-  latestFrame.src = link;
+function openPDF(link, latestpubElement) {
+  latestpubpdfFrame.src = link;
 
   if (currentLatest) {
     currentLatest.classList.remove("playing");
   }
-  if (latestElement) {
-    latestElement.classList.add("playing");
-    currentLatest = latestElement;
+  if (latestpubElement) {
+    latestpubElement.classList.add("playing");
+    currentLatest = latestpubElement;
   }
 }
+

@@ -206,7 +206,7 @@ footer a:hover {
 /* ============================
    Section Buttons
 ============================ */
-#subjects, #notes-subjects {
+#subjects, #notes-subjects, #latest-subjects {
   display: flex;
   gap: 8px;
   margin-bottom: 15px;
@@ -216,17 +216,19 @@ footer a:hover {
 }
 
 #subjects::-webkit-scrollbar,
-#notes-subjects::-webkit-scrollbar {
+#notes-subjects::-webkit-scrollbar,
+#latest-subjects::-webkit-scrollbar {
   height: 6px;
 }
 
 #subjects::-webkit-scrollbar-thumb,
-#notes-subjects::-webkit-scrollbar-thumb {
+#notes-subjects::-webkit-scrollbar-thumb,
+#latest-subjects::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 3px;
 }
 
-.subject-btn, .note-subject-btn {
+.subject-btn, .note-subject-btn, .latestpub-subject-btn {
   background-color: #007BFF;
   color: white;
   padding: 10px 15px;
@@ -236,11 +238,11 @@ footer a:hover {
   flex: 0 0 auto;
 }
 
-.subject-btn:hover, .note-subject-btn:hover {
+.subject-btn:hover, .note-subject-btn:hover, .latestpub-subject-btn:hover {
   background-color: #0056b3;
 }
 
-.subject-btn.active, .note-subject-btn.active {
+.subject-btn.active, .note-subject-btn.active, .latestpub-subject-btn.active {
   background-color: #28a745;
 }
 
@@ -303,49 +305,8 @@ footer a:hover {
 }
 
 /* ============================
-   Shared List Styles
+   Latest publication (PDFs)
 ============================ */
-.video-title, .note-title {
-  padding: 8px;
-  margin-bottom: 5px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.2s;
-}
-
-.video-title:hover, .note-title:hover {
-  background: #f0f0f0;
-}
-
-.video-title.playing, .note-title.playing {
-  background: #4f46e5;
-  color: white;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  #main-container, #notes-container {
-    grid-template-columns: 1fr;
-  }
-
-  #video-list, #notes-list {
-    max-height: none;
-    width: 100%;
-  }
-
-  #video-frame, #pdf-frame {
-    height: 300px;
-  }
-}
-/* ============================
-   Latest Publication (PDFs)
-============================ */
-#latest-pdf-frame {
-  width: 100%;
-  height: 600px;  /* big enough to show the paper */
-  border: none;
-}
-
 #latest-container {
   display: grid;
   grid-template-columns: 250px 1fr;
@@ -357,21 +318,58 @@ footer a:hover {
   border: 1px solid #ddd;
   padding: 10px;
   overflow-y: auto;
-  max-height: 500px; /* so long lists scroll */
+  max-height: 300px;
 }
 
+#latest-viewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#latest-pdf-frame {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+
+
+
+/* ============================
+   Shared List Styles
+============================ */
+.video-title, .note-title, .latestpub-title {
+  padding: 8px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.video-title:hover, .note-title:hover, .latestpub-title:hover {
+  background: #f0f0f0;
+}
+
+.video-title.playing, .note-title.playing, .latestpub-title.playing {
+  background: #4f46e5;
+  color: white;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  #latest-container {
+  #main-container, #notes-container, #latest-container {
     grid-template-columns: 1fr;
   }
 
-  #latest-list {
+  #video-list, #notes-list, #latest-list {
     max-height: none;
     width: 100%;
   }
 
-  #latest-pdf-frame {
-    height: 400px;
+  #video-frame, #pdf-frame, #latest-pdf-frame {
+    height: 300px;
   }
 }
+
 
