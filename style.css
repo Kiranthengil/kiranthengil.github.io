@@ -55,7 +55,7 @@ nav a:hover {
 }
 
 /* ============================
-   Hero Section - Image Left, Text Right
+   Hero Section
 ============================ */
 .hero {
   height: auto;
@@ -206,7 +206,7 @@ footer a:hover {
 /* ============================
    Section Buttons
 ============================ */
-#subjects, #notes-subjects, #latest-subjects {
+#subjects, #notes-subjects, #subjects-latest {
   display: flex;
   gap: 8px;
   margin-bottom: 15px;
@@ -217,18 +217,18 @@ footer a:hover {
 
 #subjects::-webkit-scrollbar,
 #notes-subjects::-webkit-scrollbar,
-#latest-subjects::-webkit-scrollbar {
+#subjects-latest::-webkit-scrollbar {
   height: 6px;
 }
 
 #subjects::-webkit-scrollbar-thumb,
 #notes-subjects::-webkit-scrollbar-thumb,
-#latest-subjects::-webkit-scrollbar-thumb {
+#subjects-latest::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 3px;
 }
 
-.subject-btn, .note-subject-btn, .latestpub-subject-btn {
+.subject-btn {
   background-color: #007BFF;
   color: white;
   padding: 10px 15px;
@@ -238,11 +238,11 @@ footer a:hover {
   flex: 0 0 auto;
 }
 
-.subject-btn:hover, .note-subject-btn:hover, .latestpub-subject-btn:hover {
+.subject-btn:hover {
   background-color: #0056b3;
 }
 
-.subject-btn.active, .note-subject-btn.active, .latestpub-subject-btn.active {
+.subject-btn.active {
   background-color: #28a745;
 }
 
@@ -300,12 +300,12 @@ footer a:hover {
 
 #pdf-frame {
   width: 100%;
-  height: 300px;
+  height: 600px;
   border: none;
 }
 
 /* ============================
-   Latest publication (PDFs)
+   Latest Publication (PDFs)
 ============================ */
 #latest-container {
   display: grid;
@@ -318,7 +318,7 @@ footer a:hover {
   border: 1px solid #ddd;
   padding: 10px;
   overflow-y: auto;
-  max-height: 300px;
+  max-height: 500px;
 }
 
 #latest-viewer {
@@ -329,12 +329,9 @@ footer a:hover {
 
 #latest-pdf-frame {
   width: 100%;
-  height: 300px;
+  height: 600px;
   border: none;
 }
-
-
-
 
 /* ============================
    Shared List Styles
@@ -368,8 +365,6 @@ footer a:hover {
   }
 
   #video-frame, #pdf-frame, #latest-pdf-frame {
-    height: 300px;
+    height: 400px;
   }
 }
-
-
