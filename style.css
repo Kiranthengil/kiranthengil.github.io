@@ -340,6 +340,12 @@ footer a:hover {
 /* ============================
    Latest Publication (PDFs)
 ============================ */
+#latest-pdf-frame {
+  width: 100%;
+  height: 600px;  /* big enough to show the paper */
+  border: none;
+}
+
 #latest-container {
   display: grid;
   grid-template-columns: 250px 1fr;
@@ -351,22 +357,9 @@ footer a:hover {
   border: 1px solid #ddd;
   padding: 10px;
   overflow-y: auto;
-  max-height: 300px;
+  max-height: 500px; /* so long lists scroll */
 }
 
-#latest-viewer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#latest-pdf-frame {
-  width: 100%;
-  height: 300px;
-  border: none;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
   #latest-container {
     grid-template-columns: 1fr;
@@ -378,6 +371,7 @@ footer a:hover {
   }
 
   #latest-pdf-frame {
-    height: 300px;
+    height: 400px;
   }
 }
+
